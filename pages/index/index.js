@@ -36,12 +36,29 @@ const newsCategory = [
 Page({
   data: {
     newsCategory,
-    currCate: 0
+    currCate: 0,
+    currNewsList:[]
+  },
+  onLoad() {
+    this.getNews()
   },
   handleCateChange(e) {
     const index = e.target.dataset.index
     this.setData({
       currCate: index
+    }, this.getNews)
+  },
+  getNews() {
+    const type = newsCategory[this.data.currCate].id
+    wx.request({
+      url: 'https://test-miniprogram.com/api/news/list',
+      method: 'GET',
+      data: {type},
+      success: res => {
+        this.setData({
+          currNewsList: res.data.result
+        })
+      }
     })
   }
 })

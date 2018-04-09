@@ -1,10 +1,18 @@
+.container{
+  margin-top:100rpx
+}
 .tabs{
   display: flex;
   justify-content: space-between;
   background: #857dd1;
   color:#fff;
   padding:35rpx 20rpx 15rpx;
-  font-size: 30rpx
+  font-size: 30rpx;
+  position: fixed;
+  top: 0;
+  left:0;
+  width:100%;
+  box-sizing: border-box
 }
 .tab-item{
   padding-bottom: 7rpx;
@@ -14,4 +22,12 @@
 }
 .tab-item.active{
   border-color: yellow
+}
+
+.news-list{
+  padding: 20rpx
+}
+.news-item-image{
+  width:100rpx;
+  height:65rpx
 }
