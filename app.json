@@ -1,12 +1,13 @@
 {
-  "pages":[
-    "pages/index/index"
+  "pages": [
+    "pages/index/index",
+    "pages/news-detail/news-detail"
   ],
-  "window":{
-    "enablePullDownRefresh":true,
-    "backgroundTextStyle":"light",
+  "window": {
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#857dd1",
     "navigationBarTitleText": "xe-news",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }

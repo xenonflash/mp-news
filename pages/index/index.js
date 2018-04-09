@@ -60,5 +60,11 @@ Page({
         })
       }
     })
+  },
+  handleNewsClick(e) {
+    const id = e.target.dataset.id
+    wx.navigateTo({
+      url: '/pages/news-detail/news-detail?id=' +id,
+    })
   }
 })

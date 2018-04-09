@@ -13,7 +13,7 @@
   <!-- 主界面的每个列表项都显示有关该新闻的标题，作者以及发布时间。如果可以获取的
 话，图片也应包括在内。请注意，并非所有的响应都包含图片数据，但如果有此数据
 ，则需要将其包含在内。否则使用一张默认图片来代替。 -->
-    <view class="news-item" wx:for="{{currNewsList}}">
+    <view class="news-item" data-id="{{item.id}}" wx:for="{{currNewsList}}" bindtap='handleNewsClick'>
       <text class="news-item-title">{{item.title}}</text>
       <view class="news-item-date">{{item.date}}</view>
       <image class="news-item-image" src="{{item.firstImage}}"></image>
