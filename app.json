@@ -5,7 +5,7 @@
   "window":{
     "enablePullDownRefresh":true,
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#857dd1",
     "navigationBarTitleText": "xe-news",
     "navigationBarTextStyle":"black"
   }

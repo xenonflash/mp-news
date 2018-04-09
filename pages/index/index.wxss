@@ -1,0 +1,17 @@
+.tabs{
+  display: flex;
+  justify-content: space-between;
+  background: #857dd1;
+  color:#fff;
+  padding:35rpx 20rpx 15rpx;
+  font-size: 30rpx
+}
+.tab-item{
+  padding-bottom: 7rpx;
+  border-bottom:2px solid;
+  border-color: transparent;
+  transition: all 100ms
+}
+.tab-item.active{
+  border-color: yellow
+}

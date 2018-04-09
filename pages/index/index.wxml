@@ -1,2 +1,16 @@
 <!--index.wxml-->
-<view></view>
+<view class="container">
+  <view class="tabs">
+    <text
+      wx:for="{{newsCategory}}"
+      wx:key="{{item.id}}"
+      class="tab-item {{currCate == index ? 'active' :''}}"
+      data-index="{{index}}"
+      bindtap='handleCateChange'
+    >{{item.name}}</text>
+  </view>
+  <view class="news-list">
+    <view class="news-item"></view>
+  </view>
+
+</view>
