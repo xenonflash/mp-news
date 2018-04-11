@@ -35,7 +35,6 @@
   font-size: 28rpx;
   text-indent: 56rpx;
 }
-.news-detail-content 
 .news-detail-content image{
   display: block;
   width: 90%;
