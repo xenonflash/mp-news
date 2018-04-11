@@ -21,22 +21,29 @@ Page({
     swiperImages: []
   },
   onLoad() {
+    this.getNews(_ => {
+      wx.stopPullDownRefresh()
+    })
+  },
+  onPullDownRefresh() {
     this.getNews()
   },
   handleCateChange(e) {
-    const index = e.target.dataset.index
+    const index = e.currentTarget.dataset.index
     this.setData({
       currCate: index
     }, this.getNews)
   },
-  getNews() {
+  getNews(cb) {
     const type = newsCategory[this.data.currCate].id
+    console.log('get news')
     wx.request({
       url: 'https://test-miniprogram.com/api/news/list',
       method: 'GET',
       data: { type },
       success: res => {
         this.genNewsList(res)
+        typeof cb === 'function' && cb(res)
       }
     })
   },
