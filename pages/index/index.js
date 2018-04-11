@@ -52,6 +52,7 @@ Page({
     newsList = newsList.map(n => {
       const date = new Date(n.date)
       n.formatedDate = formatTime(date)
+      n.image = n.firstImage || '../../assets/images/loading.gif'
       return n
     })
     this.setData({
