@@ -1,36 +1,16 @@
+const { formatTime } = require('../../utils/util.js')
 //index.js
 //获取应用实例
 const app = getApp()
 
 const newsCategory = [
-  {
-    id: 'gn',
-    name: '国内'
-  },
-  {
-    id: 'gj',
-    name: '国际'
-  },
-  {
-    id: 'cj',
-    name: '财经'
-  },
-  {
-    id: 'yl',
-    name: '娱乐'
-  },
-  {
-    id: 'js',
-    name: '纪实'
-  },
-  {
-    id: 'ty',
-    name: '台湾'
-  },
-  {
-    id: 'other',
-    name: '综合'
-  },
+  { id: 'gn', name: '国内' },
+  { id: 'gj', name: '国际' },
+  { id: 'cj', name: '财经' },
+  { id: 'yl', name: '娱乐' },
+  { id: 'js', name: '纪实' },
+  { id: 'ty', name: '台湾' },
+  { id: 'other', name: '综合'}
 ]
 
 Page({
@@ -55,8 +35,14 @@ Page({
       method: 'GET',
       data: {type},
       success: res => {
+        let newsList = res.data.result
+        newsList = newsList.map(n => {
+          const date = new Date(n.date)
+          n.formatedDate = formatTime(date)
+          return n
+        })
         this.setData({
-          currNewsList: res.data.result
+          currNewsList: newsList
         })
       }
     })

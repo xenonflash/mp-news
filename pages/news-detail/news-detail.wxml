@@ -1,2 +1,16 @@
 <!--pages/news-detail/news-detail.wxml-->
-<text></text>
+<view class="container">
+  <view class="title">{{title}}</view>
+  <view class="date">{{date}}</view>
+  <view class="source">{{source}}</view>
+  <view class="read-count">{{readCount}}</view>
+
+  <block
+    wx:for="{{content}}"
+    wx:key="{{item.id}}"
+  >
+    <image wx:if="{{item.type === 'image'}}" src="{{item.src}}"/>
+    <p wx:if="{{item.type === 'p'}}">{{item.text}}</p>
+    <strong wx:if="{{item.type === 'strong'}}">{{item.text}}</strong>
+  </block>
+</view>
