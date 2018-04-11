@@ -10,14 +10,15 @@ const newsCategory = [
   { id: 'yl', name: '娱乐' },
   { id: 'js', name: '纪实' },
   { id: 'ty', name: '台湾' },
-  { id: 'other', name: '综合'}
+  { id: 'other', name: '综合' }
 ]
 
 Page({
   data: {
     newsCategory,
     currCate: 0,
-    currNewsList:[]
+    currNewsList: [],
+    swiperImages: []
   },
   onLoad() {
     this.getNews()
@@ -33,24 +34,27 @@ Page({
     wx.request({
       url: 'https://test-miniprogram.com/api/news/list',
       method: 'GET',
-      data: {type},
+      data: { type },
       success: res => {
-        let newsList = res.data.result
-        newsList = newsList.map(n => {
-          const date = new Date(n.date)
-          n.formatedDate = formatTime(date)
-          return n
-        })
-        this.setData({
-          currNewsList: newsList
-        })
+        this.genNewsList(res)
       }
+    })
+  },
+  genNewsList(res) {
+    let newsList = res.data.result
+    newsList = newsList.map(n => {
+      const date = new Date(n.date)
+      n.formatedDate = formatTime(date)
+      return n
+    })
+    this.setData({
+      currNewsList: newsList
     })
   },
   handleNewsClick(e) {
     const id = e.target.dataset.id
     wx.navigateTo({
-      url: '/pages/news-detail/news-detail?id=' +id,
+      url: '/pages/news-detail/news-detail?id=' + id,
     })
   }
 })

@@ -1,1 +1,12 @@
 /* pages/news-detail/news-detail.wxss */
+.container{
+  padding: 30rpx
+}
+p{
+  margin: 15rpx
+}
+image{
+  display: block;
+  width: 90%;
+  margin: 30rpx auto
+}
