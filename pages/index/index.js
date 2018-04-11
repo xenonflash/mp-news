@@ -18,7 +18,7 @@ Page({
     newsCategory,
     currCate: 0,
     currNewsList: [],
-    swiperImages: []
+    swiperList: []
   },
   onLoad() {
     this.getNews(_ => {
@@ -56,7 +56,8 @@ Page({
       return n
     })
     this.setData({
-      currNewsList: newsList
+      currNewsList: newsList,
+      swiperList: newsList.slice(0,5)
     })
   },
   handleNewsClick(e) {

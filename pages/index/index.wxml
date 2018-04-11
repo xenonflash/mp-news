@@ -15,7 +15,7 @@
       indicator-color="rgba(255, 255,255, 0.5)"
       indicator-active-color="#fff"
     >
-      <block wx:for="{{currNewsList}}">
+      <block wx:for="{{swiperList}}" wx:key="{{index}}">
         <swiper-item>
           <image
             mode="aspectFill"
