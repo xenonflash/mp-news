@@ -1,34 +1,42 @@
 <!--index.wxml-->
 <view class="container">
+  <!-- tab -->
   <view class="tabs">
-    <text
-      wx:for="{{newsCategory}}"
-      wx:key="{{item.id}}"
-      class="tab-item {{currCate == index ? 'active' :''}}"
-      data-index="{{index}}"
-      bindtap='handleCateChange'
-    >{{item.name}}</text>
+    <text wx:for="{{newsCategory}}" wx:key="{{item.id}}" class="tab-item {{currCate == index ? 'active' :''}}" data-index="{{index}}" bindtap='handleCateChange'>{{item.name}}</text>
   </view>
+  <!-- swiper -->
+  <view class="swiper-wrapper">
+    <swiper
+      indicator-dots="{{true}}"
+      autoplay="{{true}}"
+      interval="{{3500}}"
+      duration="{{1000}}"
+      circular="{{true}}"
+      indicator-color="rgba(255, 255,255, 0.5)"
+      indicator-active-color="#fff"
+    >
+      <block wx:for="{{currNewsList}}">
+        <swiper-item>
+          <image
+            mode="aspectFill"
+            src="{{item.image}}"
+            class="slide-image"
+          />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- new-list -->
   <view class="news-list">
-  <!-- 主界面的每个列表项都显示有关该新闻的标题，作者以及发布时间。如果可以获取的
+    <!-- 主界面的每个列表项都显示有关该新闻的标题，作者以及发布时间。如果可以获取的
 话，图片也应包括在内。请注意，并非所有的响应都包含图片数据，但如果有此数据
 ，则需要将其包含在内。否则使用一张默认图片来代替。 -->
-    <view
-      class="news-item"
-      data-id="{{item.id}}"
-      wx:for="{{currNewsList}}"
-      bind:tap='handleNewsClick'
-      wx:key="{{index}}"
-    >
+    <view class="news-item" data-id="{{item.id}}" wx:for="{{currNewsList}}" bind:tap='handleNewsClick' wx:key="{{index}}">
       <view class="news-item-info">
         <text class="news-title">{{item.title}}</text>
         <view class="news-date">{{item.formatedDate}}</view>
       </view>
-      <image
-        class="news-item-image"
-        src="{{item.image}}"
-        mode="aspectFill"
-      />
+      <image class="news-item-image" src="{{item.image}}" mode="aspectFill" />
     </view>
   </view>
 

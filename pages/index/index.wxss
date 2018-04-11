@@ -24,6 +24,14 @@
   border-color: yellow
 }
 
+.swiper-wrapper{
+  padding: 20rpx 0
+}
+
+.swiper-wrapper image{
+  width: 100%
+}
+
 .news-list{
   padding: 20rpx
 }
