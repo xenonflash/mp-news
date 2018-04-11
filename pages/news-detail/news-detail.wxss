@@ -13,9 +13,9 @@
 .date{
   font-size: 28rpx;
   color: #aaa;
-  margin-right: 20rpx
 }
 .source{
+  margin-left: 20rpx;
   color: lightskyblue;
   font-size: 28rpx
 }

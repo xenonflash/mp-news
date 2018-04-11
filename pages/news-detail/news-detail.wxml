@@ -3,7 +3,7 @@
   <view class="title">{{title}}</view>
   <view class="date-source">
     <text class="date">{{date}}</text>
-    <text class="source">{{source}}</text>
+    <text wx:if="{{!!source}}" class="source">{{source}}</text>
   </view>
   <view class="read-count">阅读: {{readCount}}</view>
   <view class="news-detail-content">
