@@ -20,8 +20,10 @@
       bind:tap='handleNewsClick'
       wx:key="{{index}}"
     >
-      <text class="news-item-title">{{item.title}}</text>
-      <view class="news-item-date">{{item.formatedDate}}</view>
+      <view class="news-item-info">
+        <text class="news-title">{{item.title}}</text>
+        <view class="news-date">{{item.formatedDate}}</view>
+      </view>
       <image class="news-item-image" src="{{item.firstImage}}"></image>
     </view>
   </view>

@@ -27,7 +27,27 @@
 .news-list{
   padding: 20rpx
 }
+.news-item{
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36rpx;
+  padding: 20rpx
+}
+.news-item-info{
+  margin-right: 20rpx
+}
+.news-title{
+  color: #666;
+  font-size: 28rpx
+}
+.news-date{
+  color: lightslategray;
+  font-size: 20rpx
+}
 .news-item-image{
-  width:100rpx;
-  height:65rpx
+  width:150rpx;
+  height:100rpx;
 }

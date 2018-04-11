@@ -1,16 +1,19 @@
 <!--pages/news-detail/news-detail.wxml-->
 <view class="container">
   <view class="title">{{title}}</view>
-  <view class="date">{{date}}</view>
-  <view class="source">{{source}}</view>
-  <view class="read-count">{{readCount}}</view>
-
-  <block
-    wx:for="{{content}}"
-    wx:key="{{item.id}}"
-  >
-    <image wx:if="{{item.type === 'image'}}" src="{{item.src}}"/>
-    <p wx:if="{{item.type === 'p'}}">{{item.text}}</p>
-    <strong wx:if="{{item.type === 'strong'}}">{{item.text}}</strong>
-  </block>
+  <view class="date-source">
+    <text class="date">{{date}}</text>
+    <text class="source">{{source}}</text>
+  </view>
+  <view class="read-count">阅读: {{readCount}}</view>
+  <view class="news-detail-content">
+    <block
+      wx:for="{{content}}"
+      wx:key="{{item.id}}"
+    >
+      <image wx:if="{{item.type === 'image'}}" src="{{item.src}}"/>
+      <view class="content-text" wx:if="{{item.type === 'p'}}">{{item.text}}</view>
+      <text wx:if="{{item.type === 'strong'}}" style="font-weight: bold">{{item.text}}</text>
+    </block>
+  </view>
 </view>
